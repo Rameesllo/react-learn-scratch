@@ -2,12 +2,12 @@
   import {useState} from "react";
 
   function App() {
-  const student = {
+  const [studentInfo , setStudentInfo] = useState ({
     name : "ramees",
     age : 22,
     course : "bsc cs",
     city : "malappuram"
-  };
+  });
   const [studentName , setStudentName] = useState ("ramees");
   const num1 = 10;
   const num2 = 20;
@@ -66,10 +66,11 @@
       
 
       <h2> my  information  </h2>
-        <p>my name is {student.name}</p>
-        <p> my age is {student.age}</p>
-        <p> my course is {student.course}</p>
-        <p> my city is {student.city}</p>
+        <p>my name is {studentInfo.name}</p>
+        <p> my age is {studentInfo.age}</p>
+        <button className="border" onClick={() => setStudentInfo({...studentInfo, age :23})}> change age </button>
+        <p> my course is {studentInfo.course}</p>
+        <p> my city is {studentInfo .city}</p>
 
         <h2>student name ; {studentName}</h2>
         <button className="border" onClick={() => setStudentName("Rahul")}> change to rahul</button>
