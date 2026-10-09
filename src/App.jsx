@@ -2,9 +2,13 @@
   import {useState} from "react";
 
   function App() {
-  const name = "ramees";
-  const age = 22;
-  const course = "bsc cs";
+  const student = {
+    name : "ramees",
+    age : 22,
+    course : "bsc cs",
+    city : "malappuram"
+  };
+  const [studentName , setStudentName] = useState ("ramees");
   const num1 = 10;
   const num2 = 20;
   const sum = num1 + num2;
@@ -14,6 +18,8 @@
   const [count , setCount] = useState(0);
   const [inputValue, setInputValue] = useState("");
   const cars = ["bmw" , "audi" , "benz" , "toyota"];
+
+
 
   function onChange(event){
     setInputValue(event.target.value);
@@ -28,7 +34,7 @@
     setCount(count +1);
   }
 
-  function getCounMessage(){
+  function getCountMessage(){
      if (count === 0)
       return "count starting...";
     else if (count >= 5 && count <10)
@@ -60,9 +66,13 @@
       
 
       <h2> my  information  </h2>
-        <p>my name is {name}</p>
-        <p> my age is {age}</p>
-        <p> my course is {course}</p>
+        <p>my name is {student.name}</p>
+        <p> my age is {student.age}</p>
+        <p> my course is {student.course}</p>
+        <p> my city is {student.city}</p>
+
+        <h2>student name ; {studentName}</h2>
+        <button className="border" onClick={() => setStudentName("Rahul")}> change name</button>
 
         <h3> callculations</h3>
         <p> number1 : {num1}</p>
@@ -81,7 +91,7 @@
          {message !== "" && <p>{message}</p>}
           <button onClick={handleCount} className="border-2 text-amber-300"> count me </button>
            <p> count : {count}</p>
-           <p>{getCounMessage()}</p>
+           <p>{getCountMessage()}</p>
           
            my cars are : {cars.map((car)=>{
             
