@@ -9,7 +9,7 @@
   });
 
   useEffect(() => {
-    console.log(" i am learning react");
+    console.log(" i am learning react js");
   }, []);
 
   const [studentName , setStudentName] = useState ("ramees");
