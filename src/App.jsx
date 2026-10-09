@@ -26,9 +26,17 @@
 
   function handleCount() {
     setCount(count +1);
+  }
 
-   
-    
+  function getCounMessage(){
+     if (count === 0)
+      return "count starting...";
+    else if (count >= 5 && count <10)
+      return "count reached 5";
+    else if (count >= 10)
+      return "count reached maximum";
+    else
+      return "count started";
   }
 
  function handleSubmit(event){
@@ -73,17 +81,8 @@
          {message !== "" && <p>{message}</p>}
           <button onClick={handleCount} className="border-2 text-amber-300"> count me </button>
            <p> count : {count}</p>
-           
-          {count === 0 
-          ? <p>count starting...</p> 
-          : count >= 5 && count <10
-          ? <p>count reached 5</p>
-          : count >= 10 
-          ? <p> count reached maximum</p>
-          : <p>count started </p>
+           <p>{getCounMessage()}</p>
           
-          }
-
            my cars are : {cars.map((car)=>{
             
             return<p key={car}>{car}</p>
