@@ -76,9 +76,13 @@
            
           {count === 0 
           ? <p>count starting...</p> 
-          : count >= 5 
-          ? <p>cout reached 5</p>
-          : <p>count started </p>}
+          : count >= 5 && count <10
+          ? <p>count reached 5</p>
+          : count >= 10 
+          ? <p> count reached maximum</p>
+          : <p>count started </p>
+          
+          }
 
            my cars are : {cars.map((car)=>{
             
