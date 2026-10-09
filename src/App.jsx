@@ -66,9 +66,13 @@
         </form>
 
         <button onClick={handleClick} className="border"> click me</button>
-        <p> {message}</p>
+         {message !== "" && <p>{message}</p>}
           <button onClick={handleCount} className="border-2 text-amber-300"> count me </button>
-          <p>{count} </p>
+           <p> count : {count}</p>
+          {count === 0 
+          ? <p>count starting...</p> 
+          : <p>count started </p>}
+
            my cars are : {cars.map((car)=>{
             
             return<p key={car}>{car}</p>
