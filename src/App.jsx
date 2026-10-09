@@ -8,9 +8,7 @@
     city : "malappuram"
   });
 
-  useEffect(() => {
-    console.log(" i am learning react js");
-  }, []);
+  
 
   const [studentName , setStudentName] = useState ("ramees");
   const num1 = 10;
@@ -24,7 +22,9 @@
   const [inputValue, setInputValue] = useState("");
   const cars = ["bmw" , "audi" , "benz" , "toyota"];
 
-
+useEffect(() => {
+    console.log("current count :" , count);
+  }, [count]);
 
   function onChange(event){
     setInputValue(event.target.value);
