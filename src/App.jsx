@@ -10,6 +10,7 @@
   const sum = num1 + num2;
   const [message , setMessage] = useState("");
   const [message1 , setMessage1] = useState("");
+  
   const [count , setCount] = useState(0);
   const [inputValue, setInputValue] = useState("");
   const cars = ["bmw" , "audi" , "benz" , "toyota"];
@@ -25,6 +26,9 @@
 
   function handleCount() {
     setCount(count +1);
+
+   
+    
   }
 
  function handleSubmit(event){
@@ -69,8 +73,11 @@
          {message !== "" && <p>{message}</p>}
           <button onClick={handleCount} className="border-2 text-amber-300"> count me </button>
            <p> count : {count}</p>
+           
           {count === 0 
           ? <p>count starting...</p> 
+          : count >= 5 
+          ? <p>cout reached 5</p>
           : <p>count started </p>}
 
            my cars are : {cars.map((car)=>{
