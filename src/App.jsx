@@ -72,7 +72,9 @@
         <p> my city is {student.city}</p>
 
         <h2>student name ; {studentName}</h2>
-        <button className="border" onClick={() => setStudentName("Rahul")}> change name</button>
+        <button className="border" onClick={() => setStudentName("Rahul")}> change to rahul</button>
+        <button className="border" onClick={() => setStudentName("Ramees")}> change to ramees</button>
+        
 
         <h3> callculations</h3>
         <p> number1 : {num1}</p>
