@@ -1,5 +1,4 @@
-
-  import {useState} from "react";
+  import {useState , useEffect} from "react";
 
   function App() {
   const [studentInfo , setStudentInfo] = useState ({
@@ -8,6 +7,11 @@
     course : "bsc cs",
     city : "malappuram"
   });
+
+  useEffect(() => {
+    console.log("learning react");
+  }, []);
+
   const [studentName , setStudentName] = useState ("ramees");
   const num1 = 10;
   const num2 = 20;
