@@ -14,6 +14,7 @@
   const sum = num1 + num2;
   const [message , setMessage] = useState("");
   const [message1 , setMessage1] = useState("");
+  const [newName , setNewName] = useState("")
   
   const [count , setCount] = useState(0);
   const [inputValue, setInputValue] = useState("");
@@ -67,6 +68,10 @@
 
       <h2> my  information  </h2>
         <p>my name is {studentInfo.name}</p>
+         <p> change  name :<input value={newName} onChange={(event) => setNewName(event.target.value)} className="border" ></input> </p>
+        <button className="border" onClick={() => setStudentInfo({...studentInfo, name : newName})}> change name </button>
+       
+         
         <p> my age is {studentInfo.age}</p>
         <button className="border" onClick={() => setStudentInfo({...studentInfo, age :23})}> change age </button>
         <p> my course is {studentInfo.course}</p>
