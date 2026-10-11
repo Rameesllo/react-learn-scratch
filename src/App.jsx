@@ -22,7 +22,7 @@
   
   const [count , setCount] = useState(0);
   const [inputValue, setInputValue] = useState("");
-  const cars = ["bmw" , "audi" , "tiago" , "toyota"];
+  const cars = ["bmw" , "audi" , "tiago" , "t"];
 
  useEffect(() => {
   document.title = `Count: ${count}`;
