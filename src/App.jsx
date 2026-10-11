@@ -9,7 +9,9 @@
   });
 
   
-
+  const [user , setUser] = useState ("null");
+  const [loading , setLoading] = useState ("true");
+  const [error , setError] = useState (" ");
   const [studentName , setStudentName] = useState ("ramees");
   const num1 = 10;
   const num2 = 20;
@@ -22,9 +24,9 @@
   const [inputValue, setInputValue] = useState("");
   const cars = ["bmw" , "audi" , "benz" , "toyota"];
 
-useEffect(() => {
-    console.log("current count :" , count);
-  }, [count]);
+ useEffect(() => {
+  document.title = `Count: ${count}`;
+}, [count]);
 
   function onChange(event){
     setInputValue(event.target.value);
