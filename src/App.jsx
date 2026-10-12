@@ -52,8 +52,15 @@
 
 
     fetchUser();
-
   }, []);
+
+  
+  if (loading) {
+      return <p> loading user...</p>;
+  }
+  else if (error) {
+    return <p>{error}</p>;
+  }
 
   function onChange(event){
     setInputValue(event.target.value);
@@ -100,9 +107,7 @@
 
        <h2>API USER DETAILS</h2>
 
-       {loading && <p> loading user...</p>}
-
-       {error && <p> {error} </p>}
+       
 
        {user && (
          <div>
