@@ -9,9 +9,9 @@
   });
 
   
-  const [user , setUser] = useState ("null");
-  const [loading , setLoading] = useState ("true");
-  const [error , setError] = useState (" ");
+  const [user , setUser] = useState (null);
+  const [loading , setLoading] = useState (true);
+  const [error , setError] = useState ("");
   const [studentName , setStudentName] = useState ("ramees");
   const num1 = 10;
   const num2 = 20;
@@ -22,11 +22,38 @@
   
   const [count , setCount] = useState(0);
   const [inputValue, setInputValue] = useState("");
-  const cars = ["bmw" , "audi" , "mercedes" , "lamborginei"];
+  const cars = ["bmw" , "audi" , "mercedes" , "lamborgini"];
 
- useEffect(() => {
-  document.title = `Count: ${count}`;
-}, [count]);
+  useEffect(() => {
+   document.title = `Count: ${count}`;
+  }, [count]);
+
+  useEffect(() => {
+    async function fetchUser(){
+      try {
+        const response = await fetch(
+          "https://jsonplaceholder.typicode.com/users/1"
+        );
+
+        if (!response.ok) {
+          throw new Error("failed to fetch user");
+        }
+         
+        const data = await response.json();
+        setUser(data);
+      }
+      catch (err){
+        setError(err.message);
+      }
+      finally {
+        setLoading(false);
+      }
+    }
+
+
+    fetchUser();
+
+  }, []);
 
   function onChange(event){
     setInputValue(event.target.value);
@@ -65,8 +92,26 @@
  }
 
   return(
+       
+
+      
 
       <div>
+
+       <h2>API USER DETAILS</h2>
+
+       {loading && <p> loading user...</p>}
+
+       {error && <p> {error} </p>}
+
+       {user && (
+         <div>
+         <p>Name : {user.name}</p>
+         <p>Email : {user.email}</p>
+         <p>City : {user.address.city}</p>
+         </div>
+       )}
+
         <h1 className="text-3xl font-bold underline">
           my first react app</h1>
           <p>i am learning react without ai</p>
