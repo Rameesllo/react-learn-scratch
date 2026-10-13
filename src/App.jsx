@@ -19,6 +19,8 @@
   const [message , setMessage] = useState("");
   const [message1 , setMessage1] = useState("");
   const [newName , setNewName] = useState("")
+  const [user , setUser] = useState(null)
+  const [userId , setUserId] = useState("1")
   
   const [count , setCount] = useState(0);
   const [inputValue, setInputValue] = useState("");
@@ -29,7 +31,7 @@
 
       try {
         const response = await fetch(
-          "https://jsonplaceholder.typicode.com/users/1"
+          "https://jsonplaceholder.typicode.com/users/2"
         );
 
         if (!response.ok) {
@@ -124,7 +126,10 @@
          </div>
        )
        )}
-       <button disabled={loading} className="border" onClick={fetchUser}>
+       <button disabled={loading} className="border" onClick={()=> {
+        setUserId{userId +1};
+        fetchUser();
+       }}>
          {loading ? "loading" : "refresh user"}
        </button>
 
