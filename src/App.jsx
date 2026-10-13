@@ -26,7 +26,7 @@
     async function fetchUser(){
       setLoading(true);
       setError("");
-      
+
       try {
         const response = await fetch(
           "https://jsonplaceholder.typicode.com/users/1"
@@ -58,12 +58,7 @@
   }, []);
 
   
-  if (loading) {
-      return <p> loading user...</p>;
-  }
-  else if (error) {
-    return <p>{error}</p>;
-  }
+  
 
   function onChange(event){
     setInputValue(event.target.value);
@@ -112,13 +107,26 @@
 
        
 
-       {user && (
+       {loading ? (
+        <p>loading user..</p>
+       )
+        : error ? (
+        <p>{error}</p>
+        )
+        : (
+
+       
+       user && (
          <div>
          <p>Name : {user.name}</p>
          <p>Email : {user.email}</p>
          <p>City : {user.address.city}</p>
          </div>
+       )
        )}
+       <button className="border" onClick={fetchUser}>
+         refresh user
+       </button>
 
         <h1 className="text-3xl font-bold underline">
           my first react app</h1>
