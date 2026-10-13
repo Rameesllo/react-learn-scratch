@@ -124,7 +124,7 @@
          </div>
        )
        )}
-       <button disabled={loading} className="border" onClick={fetchUser}>
+       <button disabled={loading ? "loading" : "refresh user"} className="border" onClick={fetchUser}>
          refresh user
        </button>
 
