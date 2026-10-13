@@ -24,6 +24,9 @@
   const [inputValue, setInputValue] = useState("");
   const cars = ["bmw" , "audi" , "mercededdds" , "lamborgini"];
     async function fetchUser(){
+      setLoading(true);
+      setError("");
+      
       try {
         const response = await fetch(
           "https://jsonplaceholder.typicode.com/users/1"
