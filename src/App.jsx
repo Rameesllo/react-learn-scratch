@@ -124,8 +124,8 @@
          </div>
        )
        )}
-       <button disabled={loading ? "loading" : "refresh user"} className="border" onClick={fetchUser}>
-         refresh user
+       <button disabled={loading} className="border" onClick={fetchUser}>
+         {loading ? "loading" : "refresh user"}
        </button>
 
         <h1 className="text-3xl font-bold underline">
