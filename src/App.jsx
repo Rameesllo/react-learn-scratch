@@ -82,6 +82,8 @@
   }
   
   function handleDecrease(){
+    if(count < 1)
+    return ;
     setCount(count - 1);
   }
 
@@ -187,7 +189,7 @@
           <button onClick={handleCount} className="border-2 text-amber-300"> count me </button>
            <p> count : {count}</p>
            <p>{getCountMessage()}</p>
-           <button onclick={handleDecrease} className="border-2 text-black">decrease</button>
+           <button onClick={handleDecrease} className="border-2 text-black">decrease</button>
 
           <br></br>
            my cars are : {cars.map((car)=>{
