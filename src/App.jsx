@@ -128,6 +128,7 @@
          </div>
        )
        )}
+      <p> current user id : {userId}</p>
        <button disabled={loading} className="border" onClick={()=> {
         const nextUserId = userId >= 10 ?1 : userId + 1;
 
