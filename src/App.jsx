@@ -1,7 +1,7 @@
   import {useState , useEffect} from "react";
 
- function Welcome() {
-  return <h1> welcome to react app </h1>
+ function Welcome(props) {
+  return <h1> welcome {props.name} </h1>
  }
 
   function App() {
@@ -80,6 +80,10 @@
   function handleCount() {
     setCount(count +1);
   }
+  
+  function handleDecrease(){
+    setCount(count - 1);
+  }
 
   function getCountMessage(){
      if (count === 0)
@@ -110,7 +114,8 @@
       
 
       <div>
-       <Welcome/>
+       <Welcome name="llo"/>
+       <Welcome name="ramees"/>
 
        <h2>API USER DETAILS</h2>
 
@@ -182,7 +187,9 @@
           <button onClick={handleCount} className="border-2 text-amber-300"> count me </button>
            <p> count : {count}</p>
            <p>{getCountMessage()}</p>
-          
+           <button onclick={handleDecrease} className="border-2 text-black">decrease</button>
+
+          <br></br>
            my cars are : {cars.map((car)=>{
             
             return<p key={car}>{car}</p>
