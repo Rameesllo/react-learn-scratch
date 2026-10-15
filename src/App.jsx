@@ -1,5 +1,9 @@
   import {useState , useEffect} from "react";
 
+ function Welcome() {
+  return <h1> welcome to react app </h1>
+ }
+
   function App() {
   const [studentInfo , setStudentInfo] = useState ({
     name : "ramees",
@@ -106,6 +110,7 @@
       
 
       <div>
+       <Welcome/>
 
        <h2>API USER DETAILS</h2>
 
