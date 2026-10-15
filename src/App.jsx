@@ -19,19 +19,21 @@
   const [message , setMessage] = useState("");
   const [message1 , setMessage1] = useState("");
   const [newName , setNewName] = useState("")
-  const [user , setUser] = useState(null)
-  const [userId , setUserId] = useState("1")
+  const [userId , setUserId] = useState(1)
   
   const [count , setCount] = useState(0);
   const [inputValue, setInputValue] = useState("");
   const cars = ["bmw" , "audi" , "mercededdds" , "lamborgini"];
-    async function fetchUser(){
+
+    async function fetchUser(number){
       setLoading(true);
       setError("");
 
+      
+
       try {
         const response = await fetch(
-          "https://jsonplaceholder.typicode.com/users/2"
+          `https://jsonplaceholder.typicode.com/users/${number}`
         );
 
         if (!response.ok) {
@@ -56,11 +58,11 @@
 
 
 
-    fetchUser();
+    fetchUser(1);
   }, []);
 
   
-  
+   
 
   function onChange(event){
     setInputValue(event.target.value);
@@ -127,8 +129,10 @@
        )
        )}
        <button disabled={loading} className="border" onClick={()=> {
-        setUserId{userId +1};
-        fetchUser();
+        const nextUserId = userId >= 10 ?1 : userId + 1;
+
+        setUserId(nextUserId);
+        fetchUser(nextUserId);
        }}>
          {loading ? "loading" : "refresh user"}
        </button>
