@@ -1,7 +1,12 @@
   import {useState , useEffect} from "react";
 
  function Welcome(props) {
-  return <h1> welcome {props.name} </h1>
+  return (
+  <div>
+  <h1> welcome{props.name} </h1>
+  <h2> course : {props.course}</h2>
+  </div>
+  )       
  }
 
   function App() {
@@ -116,8 +121,9 @@
       
 
       <div>
-       <Welcome name="llo"/>
-       <Welcome name="ramees"/>
+       <Welcome name="llo" course="bsc"/>
+       <Welcome name="Rahul" course="BCA" />
+       
 
        <h2>API USER DETAILS</h2>
 
