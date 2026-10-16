@@ -3,7 +3,7 @@
  function Student({name , age , course , city}){
   return(
 <div>
-  <h2 className="text-amber-100">name : {name}</h2>
+  <h2 className="text-red-500">name : {name}</h2>
   <h2>age : {age}</h2>
   <h2> course : {course}</h2>
   <h2>city : {city}</h2>
@@ -37,6 +37,7 @@
   const [count , setCount] = useState(0);
   const [inputValue, setInputValue] = useState("");
   const cars = ["bmw" , "audi" , "mercededdds" , "lamborgini"];
+  
 
     async function fetchUser(number){
       setLoading(true);
@@ -75,7 +76,17 @@
   }, []);
 
   
-   
+   function handleIncrease(){
+    setStudentInfo({
+      ...studentInfo , age:studentInfo.age +1
+    });
+   }
+
+   function handleDecreaseAge(){
+    setStudentInfo({
+      ...studentInfo, age:studentInfo.age - 1
+    });
+   }
 
   function onChange(event){
     setInputValue(event.target.value);
@@ -131,7 +142,10 @@
         course={studentInfo.course}
         city={studentInfo.city}
        />
-       
+       <button className="border" onClick={() => setStudentInfo({...studentInfo, city:"kochi"})}>change city  </button>
+       <button className="border" onClick= {() => setStudentInfo ({...studentInfo,course:"bca"})}>change course</button>
+       <button className="border" onClick={handleIncrease} > increase age</button>
+      <button className="border" onClick={handleDecreaseAge} > decrease age</button>
 
        <h2>API USER DETAILS</h2>
 
