@@ -9,6 +9,15 @@
   )       
  }
 
+ function Llo({name , age}) {
+  return(
+    <div>
+      <h1>welcome{name}</h1>
+      <h2>age : {age}</h2>
+    </div>
+  );
+ }
+
   function App() {
   const [studentInfo , setStudentInfo] = useState ({
     name : "ramees",
@@ -123,6 +132,9 @@
       <div>
        <Welcome name="llo" course="bsc"/>
        <Welcome name="Rahul" course="BCA" />
+
+       <Llo name="blaah" age="21"/>
+
        
 
        <h2>API USER DETAILS</h2>
