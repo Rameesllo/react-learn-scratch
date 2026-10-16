@@ -87,6 +87,10 @@
       ...studentInfo, age:studentInfo.age - 1
     });
    }
+   
+   function handleResetAge(){
+    setStudentInfo({...studentInfo, age:22});
+   }
 
   function onChange(event){
     setInputValue(event.target.value);
@@ -146,6 +150,7 @@
        <button className="border" onClick= {() => setStudentInfo ({...studentInfo,course:"bca"})}>change course</button>
        <button className="border" onClick={handleIncrease} > increase age</button>
       <button className="border" onClick={handleDecreaseAge} > decrease age</button>
+      <button className="border" onClick={handleResetAge}> reset age</button>
 
        <h2>API USER DETAILS</h2>
 
