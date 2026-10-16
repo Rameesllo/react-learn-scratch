@@ -1,11 +1,12 @@
   import {useState , useEffect} from "react";
 
- function Student(props){
+ function Student({name , age , course , city}){
   return(
 <div>
-  <h2>name : {props.name}</h2>
-  <h2>age : {props.age}</h2>
-  <h2> course : {props.course}</h2>
+  <h2 className="text-amber-100">name : {name}</h2>
+  <h2>age : {age}</h2>
+  <h2> course : {course}</h2>
+  <h2>city : {city}</h2>
 </div>
   );
  }
@@ -128,6 +129,7 @@
         name={studentInfo.name}
         age={studentInfo.age}
         course={studentInfo.course}
+        city={studentInfo.city}
        />
        
 
