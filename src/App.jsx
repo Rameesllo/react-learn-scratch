@@ -87,9 +87,13 @@
       ...studentInfo, age:studentInfo.age - 1
     });
    }
-   
+
    function handleResetAge(){
     setStudentInfo({...studentInfo, age:22});
+   }
+
+   function handleResetCourse(){
+    setStudentInfo({...studentInfo, course:"bsc cs"})
    }
 
   function onChange(event){
@@ -151,11 +155,12 @@
        <button className="border" onClick={handleIncrease} > increase age</button>
       <button className="border" onClick={handleDecreaseAge} > decrease age</button>
       <button className="border" onClick={handleResetAge}> reset age</button>
+      <button className="border" onClick={handleResetCourse}> reset course</button>
 
        <h2>API USER DETAILS</h2>
 
        
-
+    
        {loading ? (
         <p>loading user..</p>
        )
