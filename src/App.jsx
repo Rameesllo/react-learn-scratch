@@ -1,23 +1,17 @@
   import {useState , useEffect} from "react";
 
- function Welcome(props) {
-  return (
-  <div>
-  <h1> welcome{props.name} </h1>
-  <h2> course : {props.course}</h2>
-  </div>
-  )       
- }
-
- function Llo({name , age}) {
+ function Student(props){
   return(
-    <div>
-      <h1>welcome{name}</h1>
-      <h2>age : {age}</h2>
-    </div>
+<div>
+  <h2>name : {props.name}</h2>
+  <h2>age : {props.age}</h2>
+  <h2> course : {props.course}</h2>
+</div>
   );
  }
+  
 
+ 
   function App() {
   const [studentInfo , setStudentInfo] = useState ({
     name : "ramees",
@@ -130,11 +124,11 @@
       
 
       <div>
-       <Welcome name="llo" course="bsc"/>
-       <Welcome name="Rahul" course="BCA" />
-
-       <Llo name="blaah" age="21"/>
-
+       <Student 
+        name={studentInfo.name}
+        age={studentInfo.age}
+        course={studentInfo.course}
+       />
        
 
        <h2>API USER DETAILS</h2>
