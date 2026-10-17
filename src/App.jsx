@@ -194,7 +194,7 @@
       
 
       <h2> my  information  </h2>
-        <p>my name is {studentInfo.name}</p>
+        <p>my name is a {studentInfo.name}</p>
          <p> change  name :<input value={newName} onChange={(event) => setNewName(event.target.value)} className="border" ></input> </p>
         <button className="border" onClick={() => setStudentInfo({...studentInfo, name : newName})}> change name </button>
        
