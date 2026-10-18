@@ -76,7 +76,9 @@
 
     fetchUser(1);
   }, []);
+   
 
+  
   
    function handleIncrease(){
     setStudentInfo({
@@ -248,7 +250,8 @@
              placeholder="enter your marks"
              className="border bg-blue-500"
       >
-     </input>       
+     </input>     {marks !=="" && (<p> { Number(marks) < 0 ||  Number(marks) > 100 || !Number.isInteger(Number(marks)) ? "invalid marks" : Number(marks) >=50 ? "passed" : "fail"} </p>) }
+
 
 
 
