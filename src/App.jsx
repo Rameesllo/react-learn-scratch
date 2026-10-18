@@ -37,6 +37,8 @@
   const [count , setCount] = useState(0);
   const [inputValue, setInputValue] = useState("");
   const cars = ["bmw" , "audi" , "mercededdds" , "lamborgini"];
+  const [showMessage ,  setShowMessage] = useState(false);
+  const [marks , setMarks] = useState("");
   
 
     async function fetchUser(number){
@@ -230,12 +232,26 @@
            <p> count : {count}</p>
            <p>{getCountMessage()}</p>
            <button onClick={handleDecrease} className="border-2 text-black">decrease</button>
+           <br></br>
+           <button className="border" onClick={()=> setShowMessage(!showMessage)}> {showMessage ? "hide message" : "show message"} </button>
+           {showMessage && <p>this is my message</p>}
 
           <br></br>
            my cars are : {cars.map((car)=>{
             
-            return<p key={car}>{car}</p>
+          return<p key={car}>{car}</p>
           })}
+
+      <input type="number"
+             value={marks}
+             onChange={(event) =>setMarks(event.target.value)} 
+             placeholder="enter your marks"
+             className="border bg-blue-500"
+      >
+     </input>       
+
+
+
       </div>
   )
   }
