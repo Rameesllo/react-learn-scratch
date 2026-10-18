@@ -157,6 +157,8 @@
       <button className="border" onClick={handleResetAge}> reset age</button>
       <button className="border" onClick={handleResetCourse}> reset course</button>
 
+
+
        <h2>API USER DETAILS</h2>
 
        
@@ -172,7 +174,7 @@
        
        user && (
          <div>
-         <p>Name : {user.name}</p>
+         <p>Welcome {user.name}</p>
          <p>Email : {user.email}</p>
          <p>City : {user.address.city}</p>
          </div>
@@ -194,7 +196,7 @@
       
 
       <h2> my  information  </h2>
-        <p>my name is a {studentInfo.name}</p>
+        <p>my name is  {studentInfo.name}</p>
          <p> change  name :<input value={newName} onChange={(event) => setNewName(event.target.value)} className="border" ></input> </p>
         <button className="border" onClick={() => setStudentInfo({...studentInfo, name : newName})}> change name </button>
        
