@@ -249,7 +249,7 @@
             return<p key={student}>{index +1 }-{student}</p>
           })}
 
-          {students.lendth > 3 && <p>Many students</p>}
+          {students.length > 3 && <p>Many students</p>}
 
       <input type="number"
              value={marks}
