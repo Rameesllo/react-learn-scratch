@@ -40,6 +40,7 @@
   const students = ["ramees" , "rahul" , "akhil" , "nihal"];
   const [showMessage ,  setShowMessage] = useState(false);
   const [marks , setMarks] = useState("");
+  const [submitedName , setSubmitedName] = useState("");
   
 
     async function fetchUser(number){
