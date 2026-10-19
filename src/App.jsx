@@ -37,6 +37,7 @@
   const [count , setCount] = useState(0);
   const [inputValue, setInputValue] = useState("");
   const cars = ["bmw" , "audi" , "mercededdds" , "lamborgini" , "toyota"];
+  const students = ["ramees" , "rahul" , "akhil"];
   const [showMessage ,  setShowMessage] = useState(false);
   const [marks , setMarks] = useState("");
   
@@ -242,6 +243,10 @@
            my cars are : {cars.map((car)=>{
             
           return<p key={car}>{car}</p>
+          })}
+<br></br>
+          stdents : {students.map((student, index )=>{
+            return<p key={student}>{index +1 }-{student}</p>
           })}
 
       <input type="number"
