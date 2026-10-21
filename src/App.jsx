@@ -40,7 +40,7 @@
   const students = ["ramees" , "rahul" , "akhil" , "nihal"];
   const [showMessage ,  setShowMessage] = useState(false);
   const [marks , setMarks] = useState("");
-  const [submitedName , setSubmitedName] = useState("");
+  const [submittedName , setSubmittedName] = useState("");
   
 
     async function fetchUser(number){
@@ -135,10 +135,11 @@
  function handleSubmit(event){
     event.preventDefault();
     
-    if (inputValue === ""){
+    if (!inputValue.trim()){
     setMessage1("please enter your name");
     return; 
-}
+} 
+ setSubmittedName(inputValue);
  console.log(inputValue);
  setInputValue("");
  setMessage1("");
@@ -229,6 +230,7 @@
         <span>{message1}</span>
         <p className = "border w-1/2" > ur name is  : {inputValue}</p>
         </form>
+        {submittedName && <p>submitted names : {submittedName}</p>}
 
         <button onClick={handleClick} className="border"> click me</button>
          {message !== "" && <p>{message}</p>}
