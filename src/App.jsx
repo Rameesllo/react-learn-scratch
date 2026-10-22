@@ -31,8 +31,8 @@
   const sum = num1 + num2;
   const [message , setMessage] = useState("");
   const [message1 , setMessage1] = useState("");
-  const [newName , setNewName] = useState("")
-  const [userId , setUserId] = useState(1)
+  const [newName , setNewName] = useState("");
+  const [userId , setUserId] = useState(1);
   
   const [count , setCount] = useState(0);
   const [inputValue, setInputValue] = useState("");
@@ -44,6 +44,7 @@
   const oldNames = ["ramees", "rahul"];
   const newNames = "akhil";
   const updatedNames = [...oldNames , newNames];
+  
   
 
     async function fetchUser(number){
@@ -235,7 +236,7 @@
         </form>
 
         submitted names :
-        {submittedNames.map ((name, index) => (<p key={index}> {name} </p>)) }
+        {submittedNames.map ((name, index) => (<p key={index}> {name}  <button type="button" className="border bg-red-600 ">delete</button> </p>)) }
        <br></br>
 
         <button onClick={handleClick} className="border"> click me</button>
