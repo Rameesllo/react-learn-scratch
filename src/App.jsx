@@ -41,6 +41,9 @@
   const [showMessage ,  setShowMessage] = useState(false);
   const [marks , setMarks] = useState("");
   const [submittedNames , setSubmittedNames] = useState([]);
+  const oldNames = ["ramees", "rahul"];
+  const newNames = akhil;
+  const updatedNames = [...oldNames , newNames];
   
 
     async function fetchUser(number){
@@ -80,7 +83,7 @@
   }, []);
    
 
-  
+  setSubmitedNames([...submittedNames , inputValue]);
   
    function handleIncrease(){
     setStudentInfo({
