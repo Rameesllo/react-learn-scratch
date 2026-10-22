@@ -109,7 +109,10 @@
    }
 
    function handleResetCourse(){
-    setStudentInfo({...studentInfo, course:"bsc cs"})
+    const confirmReset = window.confirm("are u sure");
+    if (confirmReset){
+          setStudentInfo({...studentInfo, course:"bsc cs"})
+    }
    }
 
   function onChange(event){
