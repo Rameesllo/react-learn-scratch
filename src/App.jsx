@@ -42,7 +42,7 @@
   const [marks , setMarks] = useState("");
   const [submittedNames , setSubmittedNames] = useState([]);
   const oldNames = ["ramees", "rahul"];
-  const newNames = akhil;
+  const newNames = "akhil";
   const updatedNames = [...oldNames , newNames];
   
 
@@ -83,7 +83,7 @@
   }, []);
    
 
-  setSubmitedNames([...submittedNames , inputValue]);
+  
   
    function handleIncrease(){
     setStudentInfo({
@@ -142,7 +142,7 @@
     setMessage1("please enter your name");
     return; 
 } 
- setSubmittedNames(inputValue);
+ setSubmittedNames([...submittedNames , inputValue.trim()]);
  console.log(inputValue);
  setInputValue("");
  setMessage1("");
@@ -233,7 +233,10 @@
         <span>{message1}</span>
         <p className = "border w-1/2" > ur name is  : {inputValue}</p>
         </form>
-        {submittedName && <p>submitted names : {submittedNames}</p>}
+
+        submitted names :
+        {submittedNames.map ((name, index) => (<p key={index}> {name} </p>)) }
+       <br></br>
 
         <button onClick={handleClick} className="border"> click me</button>
          {message !== "" && <p>{message}</p>}
