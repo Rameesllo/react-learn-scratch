@@ -83,7 +83,11 @@
     fetchUser(1);
   }, []);
    
-
+  function handleDelete(indexToDelete){
+    setSubmittedNames(
+      submittedNames.filter((name, index) => index !== indexToDelete  )
+    );
+  }
   
   
    function handleIncrease(){
@@ -236,7 +240,7 @@
         </form>
 
         submitted names :
-        {submittedNames.map ((name, index) => (<p key={index}> {name}  <button type="button" className="border bg-red-600 ">delete</button> </p>)) }
+        {submittedNames.map ((name, index) => (<p key={index}> {name}  <button onClick={() =>handleDelete(index)} type="button" className="border bg-red-600 ">delete</button> </p>)) }
        <br></br>
 
         <button onClick={handleClick} className="border"> click me</button>
