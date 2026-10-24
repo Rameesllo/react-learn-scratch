@@ -3,7 +3,7 @@
  function Student({name , age , course , city}){
   return(
 <div>
-  <h2 className="text-red-500">name : {name}</h2>
+  <h2 className="text-red-500">name 1  : {name}</h2>
   <h2>age : {age}</h2>
   <h2> course : {course}</h2>
   <h2>city : {city}</h2>
