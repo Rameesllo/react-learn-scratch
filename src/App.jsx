@@ -84,7 +84,7 @@
   }, []);
    
   function handleDelete(indexToDelete){
-    const confirmDelete = window.confirm("are u sure want to delete this name");
+    const confirmDelete = window.confirm("are u sure want to delete this name...");
     if (confirmDelete){
       setSubmittedNames(
       submittedNames.filter((name , index) => index !== indexToDelete)
