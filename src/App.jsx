@@ -45,8 +45,9 @@
   const oldNames = ["ramees", "rahul"];
   const newNames = "akhil";
   const updatedNames = [...oldNames , newNames];
-  
+
   const [editingIndex, setEditingIndex] = useState (null);
+  const [editValue, setEditValue] = useState("")
   
   
 
@@ -256,10 +257,43 @@ if (nameExists) {
         <p className = "border w-1/2" > ur name is  : {inputValue}</p>
         </form>
 
-        submitted names :
-        {submittedNames.map ((name, index) => (<p key={index}> {name}  <button onClick={() =>handleDelete(index)} type="button" className="border bg-red-600 ">delete</button>  </p>)) }
-        <button type="button" className="border text-blue-600  ">Edit</button>
-      
+        
+submitted names:
+
+{submittedNames.map((name, index) => (
+  <p key={index}>
+    {editingIndex === index ? (
+      <input
+        className="border"
+        value={editValue}
+        onChange={(event) => setEditValue(event.target.value)}
+      />
+    ) : (
+      name
+    )}
+
+    <button
+      type="button"
+      className="border text-blue-600"
+      onClick={() => {
+        setEditingIndex(index);
+        setEditValue(name);
+      }}
+    >
+      Edit
+    </button>
+
+    <button
+      type="button"
+      className="border bg-red-600"
+      onClick={() => handleDelete(index)}
+    >
+      Delete
+    </button>
+  </p>
+))}
+
+        
        <br></br>
 
         <button onClick={handleClick} className="border"> click me</button>
