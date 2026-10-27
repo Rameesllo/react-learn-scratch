@@ -87,7 +87,7 @@
     const confirmDelete = window.confirm("are u sure want to delete this name...");
     if (confirmDelete){
       setSubmittedNames(
-      submittedNames.filter((name , index) => index !== indexToDelete)
+      submittedNames.filter((_ , index) => index !== indexToDelete)
     );
     }
   }
@@ -255,6 +255,7 @@ if (nameExists) {
 
         submitted names :
         {submittedNames.map ((name, index) => (<p key={index}> {name}  <button onClick={() =>handleDelete(index)} type="button" className="border bg-red-600 ">delete</button>  </p>)) }
+        <button type="button" className="border text-blue-600  ">Edit</button>
       
        <br></br>
 
