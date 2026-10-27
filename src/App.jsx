@@ -152,6 +152,15 @@
     setMessage1("please enter your name");
     return; 
 } 
+
+const nameExists = submittedNames.some(
+  (name) => name.toLowerCase() === inputValue.trim().toLowerCase()
+);
+
+if (nameExists) {
+  setMessage1("Name already exists");
+  return;
+}
  setSubmittedNames([...submittedNames , inputValue.trim()]);
  console.log(inputValue);
  setInputValue("");
