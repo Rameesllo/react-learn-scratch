@@ -41,9 +41,12 @@
   const [showMessage ,  setShowMessage] = useState(false);
   const [marks , setMarks] = useState("");
   const [submittedNames , setSubmittedNames] = useState([]);
+
   const oldNames = ["ramees", "rahul"];
   const newNames = "akhil";
   const updatedNames = [...oldNames , newNames];
+  
+  const [editingIndex, setEditingIndex] = useState (null);
   
   
 
