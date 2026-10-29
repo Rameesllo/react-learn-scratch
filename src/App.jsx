@@ -95,6 +95,20 @@
     );
     }
   }
+
+  function handleSave(indexToSave) {
+  if (!editValue.trim()) {
+    return;
+  }
+
+  setSubmittedNames(
+    submittedNames.map((name, index) =>
+      index === indexToSave ? editValue.trim() : name
+    )
+  );
+
+  setEditingIndex(null);
+}
   
    function handleIncrease(){
     setStudentInfo({
@@ -271,18 +285,13 @@ submitted names:
     ) : (
       name
     )}
-
-    <button
-      type="button"
-      className="border text-blue-600"
-      onClick={() => {
-        setEditingIndex(index);
-        setEditValue(name);
-      }}
-    >
-      Edit
-    </button>
-
+     
+    {editingIndex === index ?(
+      <button className="border text-green-500" type="button" onClick={()=>handleSave(index)}>save</button> )
+      :(
+        <button className="border text-blue-500" type="button" onClick={()=>{setEditingIndex(index); setEditingValue(name)}}>edit</button>
+      )
+    }
     <button
       type="button"
       className="border bg-red-600"
@@ -290,6 +299,7 @@ submitted names:
     >
       Delete
     </button>
+
   </p>
 ))}
 
